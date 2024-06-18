@@ -14,3 +14,19 @@ Content-Type: application/json
 ###
 
 GET http://localhost:3000/events/clxjn6wsz0000hsjzjletspht
+
+###
+PATCH  http://localhost:3000/events/clxjn6wsz0000hsjzjletspht
+Content-Type: application/json
+
+{
+    "name" : "New Event 2",
+    "date" :"2017-01-01T00:00:00",
+    "description": "This is a new Event",
+    "price": 100
+}
+
+
+###
+
+    DELETE http://localhost:3000/events/clxjnpixh000013rk21r3z9lm
