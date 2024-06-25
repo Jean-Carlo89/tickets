@@ -6,3 +6,10 @@ services:
       MYSQL_DATABASE: nest
     ports: 
       - 3306:3306
+
+  app:
+    build: .
+    ports:
+      - 3000:3000
+    volumes:
+      - .:/home/node/app
