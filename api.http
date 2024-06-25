@@ -1,22 +1,26 @@
 GET http://localhost:3000/events
 
 ###
+# @name createEvent
 POST http://localhost:3000/events
 Content-Type: application/json
 
 {
-    "name" : "New Event",
-    "date" :"2017-01-01T00:00:00",
-    "description": "This is a new Event",
-    "price": 100
+ "name" : "New Event",
+ "date" :"2017-01-01T00:00:00",
+ "description": "This is a new Event",
+ "price": 100
 }
 
 ###
-
-GET http://localhost:3000/events/clxjn6wsz0000hsjzjletspht
+ @eventId = {{createEvent.response.body.id}}
 
 ###
-PATCH  http://localhost:3000/events/clxjn6wsz0000hsjzjletspht
+
+GET http://localhost:3000/events/{{{eventId}}}
+
+###
+PATCH  http://localhost:3000/events/{{{eventId}}}
 Content-Type: application/json
 
 {
@@ -29,4 +33,20 @@ Content-Type: application/json
 
 ###
 
-    DELETE http://localhost:3000/events/clxjnpixh000013rk21r3z9lm
+    DELETE http://localhost:3000/events/{{eventId}}
+
+###
+
+GET http://localhost:3000/events/{{eventId}}/spots
+
+###
+# @name createSpot
+
+POST http://localhost:3000/events/{{eventId}}/spots
+Content-Type: application/json
+
+{
+    "name" : "A3"  
+}
+
+###

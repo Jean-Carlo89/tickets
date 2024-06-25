@@ -39,6 +39,8 @@ export class EventsController {
   @HttpCode(204)
   @Delete(':id')
   remove(@Param('id') id: string) {
+    console.log('delete');
+    console.log(id);
     return this.eventsService.remove(id);
   }
 }
